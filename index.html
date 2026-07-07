@@ -1,0 +1,157 @@
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRY TO FLY - The Future of Air Tickets</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(#0f172a, #1e2937); 
+            color: #e2e8f0; 
+        }
+        .hero { 
+            background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), 
+                        url('https://picsum.photos/id/1015/1920/1080') center/cover; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        h1 { font-size: 3.8rem; margin: 0 0 1rem; letter-spacing: -2px; color: #f1f5f9; }
+        .tagline { font-size: 1.65rem; margin-bottom: 1.5rem; font-weight: 600; color: #cbd5e1; }
+        .countdown { 
+            font-size: 2.1rem; 
+            margin: 25px 0; 
+            font-weight: 700; 
+            letter-spacing: 3px; 
+            color: #fbbf24; 
+        }
+        .btn { 
+            background: #fbbf24; 
+            color: #0f172a; 
+            padding: 16px 45px; 
+            font-size: 1.25rem; 
+            border: none; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-weight: 700; 
+            text-decoration: none; 
+            display: inline-block; 
+            margin-top: 20px; 
+        }
+        .btn:hover { background: #fcd34d; transform: scale(1.05); }
+        header { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            background: rgba(15,23,42,0.95); 
+            z-index: 100; 
+            padding: 15px 0; 
+        }
+        nav a { 
+            color: #e2e8f0; 
+            margin: 0 15px; 
+            text-decoration: none; 
+            font-weight: 500; 
+        }
+        .section { padding: 80px 0; }
+        .features { background: #1e2937; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { 
+            background: #334155; 
+            padding: 30px; 
+            border-radius: 12px; 
+            border: 1px solid #475569; 
+        }
+        footer { 
+            background: #0f172a; 
+            padding: 50px 0; 
+            text-align: center; 
+        }
+        .logo { font-size: 2.2rem; font-weight: 700; display: flex; align-items: center; gap: 12px; color: #fbbf24; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">✈️ TRY TO FLY</div>
+            <nav>
+                <a href="#features">How it works</a>
+                <a href="#">For Airlines</a>
+                <a href="#">For Buyers</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>THE FUTURE OF AIR TICKETS<br>IS ABOUT TO TAKE OFF</h1>
+            <p class="tagline">Революционный маркетплейс невозвратных авиабилетов</p>
+            
+            <div class="countdown" id="countdown"></div>
+            
+            <a href="#waitlist" class="btn">JOIN THE WAITLIST</a>
+            <p style="margin-top: 30px; font-size: 1.1rem;">Launch: 01.12.2026</p>
+        </div>
+    </section>
+
+    <section id="features" class="section features">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem;">Мы меняем мир авиабилетов</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Для продавцов</h3>
+                    <p>Верни значительную часть денег от билета, который раньше сгорал.</p>
+                </div>
+                <div class="card">
+                    <h3>Для покупателей</h3>
+                    <p>Покупай билеты по цене, о которой раньше можно было только мечтать.</p>
+                </div>
+                <div class="card">
+                    <h3>Для авиакомпаний</h3>
+                    <p>Новый мощный канал дохода и заполняемости рейсов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #1e2937; text-align: center;">
+        <div class="container">
+            <h2>Мир билетов никогда не будет прежним</h2>
+            <a href="mailto:info@trytofly.ru" class="btn">Связаться с нами</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LLC "NAS inc." TRY TO FLY. Все права защищены.</p>
+            <p>by Nikita Simonov • Coming Soon • 01.12.2026</p>
+        </div>
+    </footer>
+
+    <script>
+        function countdown() {
+            const launchDate = new Date("December 1, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+        }
+        setInterval(countdown, 1000);
+        countdown();
+    </script>
+</body>
+</html>
