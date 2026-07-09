@@ -75,13 +75,29 @@ html
             padding: 50px 0; 
             text-align: center; 
         }
-        .logo { font-size: 2.2rem; font-weight: 700; display: flex; align-items: center; gap: 12px; color: #fbbf24; }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="logo">✈️ TRY TO FLY</div>
+        .logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:2rem;
+font-weight:800;
+color:#FBBF24;
+letter-spacing:2px;
+}
+
+.logo svg{
+transition:.35s;
+}
+
+.logo:hover svg{
+transform:rotate(-8deg) scale(1.08);
+}
+<svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 38L54 14L33 50L28 36L10 38Z" fill="#FBBF24"/>
+</svg>
+<span>TRY TO FLY</span>
+</div>
+
             <nav>
                 <a href="#features">How it works</a>
                 <a href="#">For Airlines</a>
