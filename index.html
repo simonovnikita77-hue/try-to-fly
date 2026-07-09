@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,75 +7,32 @@
     <title>TRY TO FLY</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; padding: 0; 
-            background: #0a0f1c; 
-            color: #e2e8f0; 
-            overflow-x: hidden;
-        }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #0a0f1c; color: #e2e8f0; }
         .hero { 
-            background: linear-gradient(rgba(10,15,28,0.75), rgba(10,15,28,0.85)), 
-                        url('https://picsum.photos/id/1015/1920/1080') center/cover fixed; 
-            height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            position: relative;
+            background: linear-gradient(rgba(10,15,28,0.75), rgba(10,15,28,0.85)), url('https://picsum.photos/id/1015/1920/1080') center/cover fixed; 
+            height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; 
         }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        header {
-            position: fixed; top: 0; width: 100%; 
-            background: rgba(10,15,28,0.95); 
-            z-index: 100; padding: 18px 0; 
-            backdrop-filter: blur(12px);
-        }
-        nav a {
-            color: #cbd5e1; margin: 0 18px; text-decoration: none; font-weight: 500;
-        }
-        .logo {
-            display: flex; align-items: center; gap: 12px; 
-            font-size: 2.1rem; font-weight: 800; color: #fbbf24; letter-spacing: 1px;
-        }
-        h1 { 
-            font-size: 4.2rem; font-weight: 800; 
-            letter-spacing: -2.5px; line-height: 1.05; 
-            margin: 0 0 16px; color: #fff;
-        }
-        .slogan { 
-            font-size: 1.85rem; color: #fbbf24; 
-            font-weight: 700; margin-bottom: 12px;
-        }
-        .subtitle { 
-            font-size: 1.35rem; color: #94a3b8; 
-            max-width: 620px; margin: 0 auto 40px;
-        }
-        .countdown { 
-            font-size: 2rem; font-weight: 700; 
-            color: #fbbf24; margin: 30px 0; letter-spacing: 4px;
-        }
+        header { position: fixed; top: 0; width: 100%; background: rgba(10,15,28,0.95); z-index: 100; padding: 18px 0; backdrop-filter: blur(12px); }
+        nav a { color: #cbd5e1; margin: 0 18px; text-decoration: none; font-weight: 500; }
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 2.1rem; font-weight: 800; color: #fbbf24; }
+        h1 { font-size: 4.5rem; font-weight: 800; letter-spacing: -3px; margin: 0 0 20px; color: #fff; }
+        .slogan { font-size: 1.6rem; color: #fbbf24; margin-bottom: 30px; }
+        .subtitle { font-size: 1.4rem; color: #94a3b8; max-width: 700px; margin: 0 auto 50px; }
+        .countdown { font-size: 2.2rem; font-weight: 700; color: #fbbf24; margin: 30px 0; letter-spacing: 4px; }
         .btn { 
-            display: inline-block; padding: 18px 48px; 
-            background: linear-gradient(135deg, #fbbf24, #f59e0b); 
-            color: #0f172a; font-size: 1.2rem; font-weight: 700; 
-            border-radius: 9999px; text-decoration: none; 
-            box-shadow: 0 10px 30px rgba(251,191,36,0.4);
-            transition: all 0.4s;
+            display: inline-block; padding: 18px 52px; background: linear-gradient(135deg, #fbbf24, #f59e0b); 
+            color: #0f172a; font-size: 1.25rem; font-weight: 700; border-radius: 9999px; text-decoration: none; 
+            box-shadow: 0 12px 35px rgba(251,191,36,0.4); transition: 0.4s;
         }
-        .btn:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(251,191,36,0.5); }
-        footer { background: #0a0f1c; padding: 60px 0 30px; text-align: center; font-size: 0.95rem; color: #64748b; }
+        .btn:hover { transform: translateY(-4px); box-shadow: 0 20px 45px rgba(251,191,36,0.55); }
+        footer { background: #0a0f1c; padding: 60px 0 40px; text-align: center; color: #64748b; }
     </style>
 </head>
 <body>
     <header>
         <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-            <div class="logo">
-                <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 38L54 14L33 50L28 36L10 38Z" fill="#FBBF24"/>
-                </svg>
-                TRY TO FLY
-            </div>
+            <div class="logo">✈️ TRY TO FLY</div>
             <nav>
                 <a href="#features">Как это работает</a>
                 <a href="#">Для авиакомпаний</a>
@@ -85,16 +43,16 @@
 
     <section class="hero">
         <div class="container">
-            <h1>TRY TO FLY</h1>
+            <h1>THE FUTURE OF AIR TICKETS<br>IS ABOUT TO TAKE OFF</h1>
             <div class="slogan">Каждый билет заслуживает второго шанса</div>
             <p class="subtitle">Первый маркетплейс невозвратных авиабилетов</p>
             
             <div class="countdown" id="countdown"></div>
             
-            <a href="#waitlist" class="btn">Request Early Access</a>
+            <a href="#waitlist" class="btn">Присоединиться к ожиданию</a>
             
-            <p style="margin-top: 50px; font-size: 1.05rem; color: #94a3b8;">
-                by Nikita Simonov • Запуск 01.12.2026
+            <p style="margin-top: 60px; font-size: 1.1rem;">
+                by Nikita Simonov • Coming Soon • 01.12.2026
             </p>
         </div>
     </section>
@@ -114,7 +72,7 @@
             const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
             const m = Math.floor((diff % (1000*60*60)) / (1000*60));
             const s = Math.floor((diff % (1000*60)) / 1000);
-            document.getElementById("countdown").innerHTML = `${d} дней ${h}ч ${m}м ${s}с`;
+            document.getElementById("countdown").innerHTML = `${d}д ${h}ч ${m}м ${s}с`;
         }
         setInterval(countdown, 1000);
         countdown();
