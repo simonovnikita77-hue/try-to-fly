@@ -14,7 +14,7 @@ html
             color: #e2e8f0; 
         }
         .hero { 
-            background: linear-gradient(rgba(8,12,28,0.75), rgba(8,12,28,0.9)), 
+            background: linear-gradient(rgba(10,15,35,0.75), rgba(10,15,35,0.9)), 
                         url('https://picsum.photos/id/1015/1920/1080') center/cover fixed; 
             min-height: 100vh; 
             display: flex; 
@@ -24,7 +24,7 @@ html
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         header { 
             position: fixed; top: 0; width: 100%; 
-            background: rgba(8,12,28,0.95); 
+            background: rgba(10,15,35,0.95); 
             z-index: 100; padding: 20px 0; 
         }
         nav a { color: #cbd5e1; margin: 0 20px; text-decoration: none; font-weight: 500; }
@@ -58,6 +58,16 @@ html
             transition: all 0.4s;
         }
         .btn:hover { transform: translateY(-6px); box-shadow: 0 25px 55px rgba(251,191,36,0.55); }
+        .section { padding: 100px 0; background: #1e2937; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { 
+            background: rgba(255,255,255,0.06); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 24px; 
+            padding: 45px 35px; 
+            transition: 0.4s; 
+        }
+        .card:hover { transform: translateY(-15px); border-color: #fbbf24; }
         footer { background: #0a0f1c; padding: 80px 0 40px; text-align: center; color: #64748b; }
     </style>
 </head>
@@ -86,6 +96,26 @@ html
             <p style="margin-top: 70px; font-size: 1.1rem;">
                 by Nikita Simonov
             </p>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 style="text-align:center; font-size:2.8rem; margin-bottom:60px;">Почему TRY TO FLY</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color:#fbbf24; font-size:1.7rem;">Для продавцов</h3>
+                    <p>Верни значительную часть денег от билета, который раньше сгорал.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color:#fbbf24; font-size:1.7rem;">Для покупателей</h3>
+                    <p>Покупай билеты значительно дешевле рыночной цены.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color:#fbbf24; font-size:1.7rem;">Для авиакомпаний</h3>
+                    <p>Дополнительный доход и лучшая заполняемость рейсов.</p>
+                </div>
+            </div>
         </div>
     </section>
 
