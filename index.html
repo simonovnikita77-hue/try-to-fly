@@ -24,97 +24,127 @@ html
             text-align: center; 
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        h1 { font-size: 3.8rem; margin: 0 0 1rem; letter-spacing: -2px; color: #f1f5f9; }
-        .tagline { font-size: 1.65rem; margin-bottom: 1.5rem; font-weight: 600; color: #cbd5e1; }
-        .countdown { 
-            font-size: 2.1rem; 
-            margin: 25px 0; 
-            font-weight: 700; 
-            letter-spacing: 3px; 
-            color: #fbbf24; 
+        h1 { 
+            font-size: 5rem; 
+            font-weight: 800; 
+            letter-spacing: -3px; 
+            line-height: 1; 
+            margin-bottom: 20px; 
+            color: #fff; 
         }
+        .hero-slogan { 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            color: #FBBF24; 
+            margin-bottom: 18px; 
+        }
+        .hero-subtitle { 
+            font-size: 1.35rem; 
+            color: #E2E8F0; 
+            margin-bottom: 18px; 
+            letter-spacing: .5px; 
+        }
+        .tagline { 
+            font-size: 1.3rem; 
+            color: #CBD5E1; 
+            margin-bottom: 45px; 
+        }
+        .logo { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            font-size: 2rem; 
+            font-weight: 800; 
+            color: #FBBF24; 
+            letter-spacing: 2px; 
+        }
+        .logo svg { transition: .35s; }
+        .logo:hover svg { transform: rotate(-8deg) scale(1.08); }
         .btn { 
-            background: #fbbf24; 
-            color: #0f172a; 
-            padding: 16px 45px; 
-            font-size: 1.25rem; 
-            border: none; 
-            border-radius: 50px; 
-            cursor: pointer; 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 18px 42px; 
+            background: linear-gradient(135deg, #FBBF24, #F59E0B); 
+            color: #08101d; 
+            font-size: 1.15rem; 
             font-weight: 700; 
+            border-radius: 999px; 
             text-decoration: none; 
-            display: inline-block; 
-            margin-top: 20px; 
+            transition: .35s; 
+            box-shadow: 0 12px 35px rgba(251,191,36,.35); 
+            position: relative; 
+            overflow: hidden; 
         }
-        .btn:hover { background: #fcd34d; transform: scale(1.05); }
-        header { 
-            position: fixed; 
-            top: 0; 
-            width: 100%; 
-            background: rgba(15,23,42,0.95); 
-            z-index: 100; 
-            padding: 15px 0; 
-        }
-        nav a { 
-            color: #e2e8f0; 
-            margin: 0 15px; 
-            text-decoration: none; 
-            font-weight: 500; 
+        .btn:hover { 
+            transform: translateY(-4px) scale(1.03); 
+            box-shadow: 0 18px 45px rgba(251,191,36,.55); 
         }
         .section { padding: 80px 0; }
         .features { background: #1e2937; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { 
-            background: #334155; 
-            padding: 30px; 
-            border-radius: 12px; 
-            border: 1px solid #475569; 
+            position: relative; 
+            background: rgba(255,255,255,.06); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255,255,255,.08); 
+            border-radius: 24px; 
+            padding: 38px; 
+            overflow: hidden; 
+            transition: .35s; 
+            box-shadow: 0 20px 50px rgba(0,0,0,.18); 
+        }
+        .card:hover { 
+            transform: translateY(-12px); 
+            border-color: #FBBF24; 
+            box-shadow: 0 30px 60px rgba(0,0,0,.28), 0 0 40px rgba(251,191,36,.15); 
+        }
+        .card-icon { 
+            width: 72px; 
+            height: 72px; 
+            border-radius: 20px; 
+            background: rgba(251,191,36,.08); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 28px; 
+            border: 1px solid rgba(251,191,36,.18); 
+            transition: .35s; 
+        }
+        .card:hover .card-icon { 
+            transform: rotate(-6deg) scale(1.08); 
+            background: rgba(251,191,36,.12); 
         }
         footer { 
             background: #0f172a; 
             padding: 50px 0; 
             text-align: center; 
         }
-        .logo{
-display:flex;
-align-items:center;
-gap:12px;
-font-size:2rem;
-font-weight:800;
-color:#FBBF24;
-letter-spacing:2px;
-}
-
-.logo svg{
-transition:.35s;
-}
-
-.logo:hover svg{
-transform:rotate(-8deg) scale(1.08);
-}
-<svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10 38L54 14L33 50L28 36L10 38Z" fill="#FBBF24"/>
-</svg>
-<span>TRY TO FLY</span>
-</div>
-
-            <nav>
-                <a href="#features">How it works</a>
-                <a href="#">For Airlines</a>
-                <a href="#">For Buyers</a>
-            </nav>
+    </style>
+</head>
+<body>
+    <header style="position: fixed; top: 0; width: 100%; background: rgba(15,23,42,0.95); z-index: 100; padding: 15px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">
+                <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 38L54 14L33 50L28 36L10 38Z" fill="#FBBF24"/>
+                </svg>
+                <span>TRY TO FLY</span>
+            </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>THE FUTURE OF AIR TICKETS<br>IS ABOUT TO TAKE OFF</h1>
-            <p class="tagline">Революционный маркетплейс невозвратных авиабилетов</p>
+            <h1>TRY TO FLY</h1>
+            <div class="hero-slogan">Every Ticket Deserves a Second Chance.</div>
+            <p class="hero-subtitle">The Future of Air Tickets is About to Take Off</p>
+            <p class="tagline">Revolutionary marketplace for unused airline tickets</p>
             
             <div class="countdown" id="countdown"></div>
             
-            <a href="#waitlist" class="btn">JOIN THE WAITLIST</a>
-            <p style="margin-top: 30px; font-size: 1.1rem;">Launch: 01.12.2026</p>
+            <a href="#waitlist" class="btn">Request Early Access</a>
+            <p style="margin-top: 30px; font-size: 1.1rem;">by Nikita Simonov • Launch: 01.12.2026</p>
         </div>
     </section>
 
@@ -123,25 +153,27 @@ transform:rotate(-8deg) scale(1.08);
             <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem;">Мы меняем мир авиабилетов</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Для продавцов</h3>
-                    <p>Верни значительную часть денег от билета, который раньше сгорал.</p>
+                    <div class="card-icon">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M12 2L20 6V12C20 17 16.5 21 12 22C7.5 21 4 17 4 12V6L12 2Z" stroke="#FBBF24" stroke-width="1.8"/><path d="M9 12L11 14L15 10" stroke="#FBBF24" stroke-width="1.8"/></svg>
+                    </div>
+                    <h3>For Sellers</h3>
+                    <p>Recover value from tickets that would otherwise expire unused.</p>
                 </div>
                 <div class="card">
-                    <h3>Для покупателей</h3>
-                    <p>Покупай билеты по цене, о которой раньше можно было только мечтать.</p>
+                    <div class="card-icon">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M3 12L21 12" stroke="#FBBF24" stroke-width="1.8"/><path d="M16 7L21 12L16 17" stroke="#FBBF24" stroke-width="1.8"/><path d="M3 7V17" stroke="#FBBF24" stroke-width="1.8"/></svg>
+                    </div>
+                    <h3>For Buyers</h3>
+                    <p>Access flights at exceptional prices through a secure marketplace.</p>
                 </div>
                 <div class="card">
-                    <h3>Для авиакомпаний</h3>
-                    <p>Новый мощный канал дохода и заполняемости рейсов.</p>
+                    <div class="card-icon">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M3 14L21 10L14 21L12 15L3 14Z" stroke="#FBBF24" stroke-width="1.8"/></svg>
+                    </div>
+                    <h3>For Airlines</h3>
+                    <p>Unlock new revenue while improving seat utilization.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: #1e2937; text-align: center;">
-        <div class="container">
-            <h2>Мир билетов никогда не будет прежним</h2>
-            <a href="mailto:info@trytofly.ru" class="btn">Связаться с нами</a>
         </div>
     </section>
 
@@ -157,14 +189,11 @@ transform:rotate(-8deg) scale(1.08);
             const launchDate = new Date("December 1, 2026 00:00:00").getTime();
             const now = new Date().getTime();
             const distance = launchDate - now;
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = 
-                `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+            document.getElementById("countdown").innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
         }
         setInterval(countdown, 1000);
         countdown();
