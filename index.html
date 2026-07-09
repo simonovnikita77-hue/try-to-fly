@@ -1,199 +1,120 @@
-html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRY TO FLY - The Future of Air Tickets</title>
+    <title>TRY TO FLY</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body { 
             font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: linear-gradient(#0f172a, #1e2937); 
+            margin: 0; padding: 0; 
+            background: #0a0f1c; 
             color: #e2e8f0; 
+            overflow-x: hidden;
         }
         .hero { 
-            background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), 
-                        url('https://picsum.photos/id/1015/1920/1080') center/cover; 
+            background: linear-gradient(rgba(10,15,28,0.75), rgba(10,15,28,0.85)), 
+                        url('https://picsum.photos/id/1015/1920/1080') center/cover fixed; 
             height: 100vh; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             text-align: center; 
+            position: relative;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header {
+            position: fixed; top: 0; width: 100%; 
+            background: rgba(10,15,28,0.95); 
+            z-index: 100; padding: 18px 0; 
+            backdrop-filter: blur(12px);
+        }
+        nav a {
+            color: #cbd5e1; margin: 0 18px; text-decoration: none; font-weight: 500;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 12px; 
+            font-size: 2.1rem; font-weight: 800; color: #fbbf24; letter-spacing: 1px;
+        }
         h1 { 
-            font-size: 5rem; 
-            font-weight: 800; 
-            letter-spacing: -3px; 
-            line-height: 1; 
-            margin-bottom: 20px; 
-            color: #fff; 
+            font-size: 4.2rem; font-weight: 800; 
+            letter-spacing: -2.5px; line-height: 1.05; 
+            margin: 0 0 16px; color: #fff;
         }
-        .hero-slogan { 
-            font-size: 2.2rem; 
-            font-weight: 700; 
-            color: #FBBF24; 
-            margin-bottom: 18px; 
+        .slogan { 
+            font-size: 1.85rem; color: #fbbf24; 
+            font-weight: 700; margin-bottom: 12px;
         }
-        .hero-subtitle { 
-            font-size: 1.35rem; 
-            color: #E2E8F0; 
-            margin-bottom: 18px; 
-            letter-spacing: .5px; 
+        .subtitle { 
+            font-size: 1.35rem; color: #94a3b8; 
+            max-width: 620px; margin: 0 auto 40px;
         }
-        .tagline { 
-            font-size: 1.3rem; 
-            color: #CBD5E1; 
-            margin-bottom: 45px; 
+        .countdown { 
+            font-size: 2rem; font-weight: 700; 
+            color: #fbbf24; margin: 30px 0; letter-spacing: 4px;
         }
-        .logo { 
-            display: flex; 
-            align-items: center; 
-            gap: 12px; 
-            font-size: 2rem; 
-            font-weight: 800; 
-            color: #FBBF24; 
-            letter-spacing: 2px; 
-        }
-        .logo svg { transition: .35s; }
-        .logo:hover svg { transform: rotate(-8deg) scale(1.08); }
         .btn { 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 18px 42px; 
-            background: linear-gradient(135deg, #FBBF24, #F59E0B); 
-            color: #08101d; 
-            font-size: 1.15rem; 
-            font-weight: 700; 
-            border-radius: 999px; 
-            text-decoration: none; 
-            transition: .35s; 
-            box-shadow: 0 12px 35px rgba(251,191,36,.35); 
-            position: relative; 
-            overflow: hidden; 
+            display: inline-block; padding: 18px 48px; 
+            background: linear-gradient(135deg, #fbbf24, #f59e0b); 
+            color: #0f172a; font-size: 1.2rem; font-weight: 700; 
+            border-radius: 9999px; text-decoration: none; 
+            box-shadow: 0 10px 30px rgba(251,191,36,0.4);
+            transition: all 0.4s;
         }
-        .btn:hover { 
-            transform: translateY(-4px) scale(1.03); 
-            box-shadow: 0 18px 45px rgba(251,191,36,.55); 
-        }
-        .section { padding: 80px 0; }
-        .features { background: #1e2937; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { 
-            position: relative; 
-            background: rgba(255,255,255,.06); 
-            backdrop-filter: blur(20px); 
-            border: 1px solid rgba(255,255,255,.08); 
-            border-radius: 24px; 
-            padding: 38px; 
-            overflow: hidden; 
-            transition: .35s; 
-            box-shadow: 0 20px 50px rgba(0,0,0,.18); 
-        }
-        .card:hover { 
-            transform: translateY(-12px); 
-            border-color: #FBBF24; 
-            box-shadow: 0 30px 60px rgba(0,0,0,.28), 0 0 40px rgba(251,191,36,.15); 
-        }
-        .card-icon { 
-            width: 72px; 
-            height: 72px; 
-            border-radius: 20px; 
-            background: rgba(251,191,36,.08); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin-bottom: 28px; 
-            border: 1px solid rgba(251,191,36,.18); 
-            transition: .35s; 
-        }
-        .card:hover .card-icon { 
-            transform: rotate(-6deg) scale(1.08); 
-            background: rgba(251,191,36,.12); 
-        }
-        footer { 
-            background: #0f172a; 
-            padding: 50px 0; 
-            text-align: center; 
-        }
+        .btn:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(251,191,36,0.5); }
+        footer { background: #0a0f1c; padding: 60px 0 30px; text-align: center; font-size: 0.95rem; color: #64748b; }
     </style>
 </head>
 <body>
-    <header style="position: fixed; top: 0; width: 100%; background: rgba(15,23,42,0.95); z-index: 100; padding: 15px 0;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <header>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
             <div class="logo">
-                <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 38L54 14L33 50L28 36L10 38Z" fill="#FBBF24"/>
                 </svg>
-                <span>TRY TO FLY</span>
+                TRY TO FLY
             </div>
+            <nav>
+                <a href="#features">Как это работает</a>
+                <a href="#">Для авиакомпаний</a>
+                <a href="#">Для покупателей</a>
+            </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
             <h1>TRY TO FLY</h1>
-            <div class="hero-slogan">Every Ticket Deserves a Second Chance.</div>
-            <p class="hero-subtitle">The Future of Air Tickets is About to Take Off</p>
-            <p class="tagline">Revolutionary marketplace for unused airline tickets</p>
+            <div class="slogan">Каждый билет заслуживает второго шанса</div>
+            <p class="subtitle">Первый маркетплейс невозвратных авиабилетов</p>
             
             <div class="countdown" id="countdown"></div>
             
             <a href="#waitlist" class="btn">Request Early Access</a>
-            <p style="margin-top: 30px; font-size: 1.1rem;">by Nikita Simonov • Launch: 01.12.2026</p>
-        </div>
-    </section>
-
-    <section id="features" class="section features">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem;">Мы меняем мир авиабилетов</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-icon">
-                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M12 2L20 6V12C20 17 16.5 21 12 22C7.5 21 4 17 4 12V6L12 2Z" stroke="#FBBF24" stroke-width="1.8"/><path d="M9 12L11 14L15 10" stroke="#FBBF24" stroke-width="1.8"/></svg>
-                    </div>
-                    <h3>For Sellers</h3>
-                    <p>Recover value from tickets that would otherwise expire unused.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M3 12L21 12" stroke="#FBBF24" stroke-width="1.8"/><path d="M16 7L21 12L16 17" stroke="#FBBF24" stroke-width="1.8"/><path d="M3 7V17" stroke="#FBBF24" stroke-width="1.8"/></svg>
-                    </div>
-                    <h3>For Buyers</h3>
-                    <p>Access flights at exceptional prices through a secure marketplace.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M3 14L21 10L14 21L12 15L3 14Z" stroke="#FBBF24" stroke-width="1.8"/></svg>
-                    </div>
-                    <h3>For Airlines</h3>
-                    <p>Unlock new revenue while improving seat utilization.</p>
-                </div>
-            </div>
+            
+            <p style="margin-top: 50px; font-size: 1.05rem; color: #94a3b8;">
+                by Nikita Simonov • Запуск 01.12.2026
+            </p>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <p>&copy; 2026 LLC "NAS inc." TRY TO FLY. Все права защищены.</p>
-            <p>by Nikita Simonov • Coming Soon • 01.12.2026</p>
         </div>
     </footer>
 
     <script>
         function countdown() {
-            const launchDate = new Date("December 1, 2026 00:00:00").getTime();
+            const launch = new Date("December 1, 2026 00:00:00").getTime();
             const now = new Date().getTime();
-            const distance = launchDate - now;
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("countdown").innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+            const diff = launch - now;
+            const d = Math.floor(diff / (1000*60*60*24));
+            const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+            const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+            const s = Math.floor((diff % (1000*60)) / 1000);
+            document.getElementById("countdown").innerHTML = `${d} дней ${h}ч ${m}м ${s}с`;
         }
         setInterval(countdown, 1000);
         countdown();
